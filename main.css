@@ -1,0 +1,238 @@
+html {
+    min-width: 100%;
+    min-height: 100%;
+    
+    background-color: black;
+}
+
+body {
+    max-height: 500px;
+
+}
+
+#canvas {
+    position: relative;
+    background-color: beige;
+    width:100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#sky {
+    position: relative;
+    background-color: skyblue;
+    width: 100%;
+    height:100%;
+}
+@keyframes scaleUp {
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(0.6);
+    }
+    60% {
+        transform: scale(0.5);
+    }
+}
+@keyframes spinny{
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+.spinObject {
+    animation-name: spinny;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    /* animation-delay: 1s; */
+}
+#object {
+    display: flex; 
+    position: absolute;
+    justify-content: center;
+    width: 50%;
+    left: 25%;
+    top: -13%; 
+    z-index: 15;
+    /* background-color: purple; */
+}
+#segmentImage {
+    animation-name: scaleUp;
+    animation-duration: 1s;
+    top:0px;
+    transform: scale(0.5);
+    height: auto;
+    filter:drop-shadow(10px 10px 6px #222);
+    
+}
+#wheelContainer{
+    margin: 0 auto;
+    width: 800px;
+    height: 800px;
+    transform: translateY(50%);
+}
+
+#wheel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: pink;
+    border-radius: 50%;
+    filter:drop-shadow(10px 10px 6px #222);
+}
+.segmentText{
+    text-align: center;
+    transform: translateY(199%);
+}
+.segment {
+    width:100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    clip-path: polygon(13.7% 0%, 50% 50%, 86.4% 0%);
+}
+
+#s1 {
+    background-color: red;
+    transform: rotate(0deg);
+}
+
+#s2 {
+    background-color: slateblue;
+    transform: rotate(72deg);
+}
+
+#s3 {
+    background-color: blue;
+    transform: rotate(144deg);
+}
+
+#s4 {
+    background-color: green;
+    transform: rotate(216deg);
+}
+
+#s5 {
+    background-color: orange;
+    transform: rotate(288deg);
+}
+@keyframes slide  {
+    0% {
+        transform: translateX(100%);
+    }
+    5% {
+        transform: translateX(10%);
+    }
+    95% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    
+}
+@keyframes slide2 {
+    0% {
+        transform: translateX(100%);
+    }
+    10% {
+        transform: translateX(100%);
+    }
+    17% {
+        transform: translateX(10%);
+    }
+    95% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    
+}
+
+@keyframes slide3 {
+    0% { 
+        transform: translateX(100%);
+    }
+    15% {
+        transform: translateX(100%);
+    }
+    25% {
+        transform: translateX(10%);
+    }
+    95% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    
+}
+@keyframes slideText {
+    0% { 
+        transform: translateX(100%);
+    }
+    17% {
+        transform: translateX(100%);
+    } 
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#warn {
+    position: absolute;
+    margin: 0 auto;
+    align-self:last baseline;
+    width: 100%;
+    height: 25%;
+    top: 15%;
+    z-index: 20;
+}
+.warnBar {
+    background-color: yellow;
+    border-color: rgb(177, 177, 18);
+    border-style: solid;
+    border-width: 1%;
+    height: 10%;
+    transform: translateX(100%);
+}
+
+#wb1 {
+    animation-name: slide;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+}
+#wb2 {
+    animation-name: slide3;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+}
+
+#warnField {
+    background-color: rgba(177, 177, 18, 0.8);
+    width: 150%;
+    height:100%;
+    display: flex;
+    transform: translateX(100%);
+    animation-name: slide2;
+    overflow-x: hidden;
+    animation-duration: 4s;
+}
+
+#warnText {
+    color: yellow;
+    position: absolute;
+    align-self: center;
+    transform: translateX(100%);
+    animation-name: slideText;
+    white-space: nowrap;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    font-size: 500%;
+    filter: drop-shadow(0px 0px 5px #222);
+}
